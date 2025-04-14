@@ -23,6 +23,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(),
+
             OutlinedButton(
               onPressed: () {
                 getIt<AppConfigProvider>().changeLocale(
