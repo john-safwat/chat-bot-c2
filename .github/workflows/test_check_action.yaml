@@ -2,7 +2,10 @@ name: flutter-test-action
 
 on:
   push:
+    branches:
+      - "*"
   pull_request:
+
 
 jobs:
   flutter-test-action:
