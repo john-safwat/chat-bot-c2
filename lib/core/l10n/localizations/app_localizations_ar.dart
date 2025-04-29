@@ -10,4 +10,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get appName => 'Flutter';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get forgetPassword => 'نسيت كلمة المرور';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get invalidEmail => 'عنوان البريد الإلكتروني غير صالح';
+
+  @override
+  String get invalidPassword => 'كلمة المرور غير صالحة';
 }

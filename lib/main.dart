@@ -1,8 +1,11 @@
 import 'package:chat_bot_c2/core/di/di.dart';
 import 'package:chat_bot_c2/core/l10n/localizations/app_localizations.dart';
 import 'package:chat_bot_c2/core/provider/app_config_provider.dart';
+import 'package:chat_bot_c2/core/routes/app_routes.dart';
 import 'package:chat_bot_c2/core/theme/app_theme.dart';
 import 'package:chat_bot_c2/core/utils/constants.dart';
+import 'package:chat_bot_c2/feature/login/view/login_view.dart';
+import 'package:chat_bot_c2/feature/login/view_model/login_view_model.dart';
 import 'package:chat_bot_c2/feature/onboarding/view/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -38,7 +41,12 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: appConfigProvider.getThemeMode(),
-      home: OnBoardingView(),
+      initialRoute: AppRoutes.loginRoute,
+      routes: {
+        AppRoutes.onboardingRoute: (_) => OnBoardingView(),
+        AppRoutes.loginRoute:
+            (_) => LoginView(),
+      },
     );
   }
 }
