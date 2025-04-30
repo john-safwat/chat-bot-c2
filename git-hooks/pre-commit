@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "Run Pre Commit Action"
+
+# Run flutter test
+flutter test
+
+# Check the exit code of the flutter test command
+if [ $? -ne 0 ]; then
+  echo "Error: Flutter tests failed. Commit aborted."
+  exit 1
+fi
+
+echo "Run Pre Commit Action done"

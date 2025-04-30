@@ -1,3 +1,9 @@
 {
-  "appName" : "Test"
+  "appName": "Test",
+  "email": "Email",
+  "password": "Password",
+  "forgetPassword": "Forget Password",
+  "login": "Login",
+  "invalidEmail": "Invalid Email Address",
+  "invalidPassword": "Invalid Password"
 }
