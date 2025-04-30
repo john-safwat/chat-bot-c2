@@ -24,10 +24,19 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload to Firebase App Distribution
-        run: |
-          npm install -g firebase-tools
-          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
-            --app islami-app-fue \
-            --token "${{ secrets.FIREBASE_TOKEN }}" \
-            --groups "internal-testers"
+
+      - name: Upload and Distribute App
+        uses: mastersam07/firebase-app-distribution-action@v0.1
+        with:
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          file: './build/app/outputs/flutter-apk/app-release.apk'  # e.g., './build/app/outputs/flutter-apk/app-release.apk'
+          groups: 'internal-testers'
+#
+#      - name: Upload to Firebase App Distribution
+#        run: |
+#          npm install -g firebase-tools
+#          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+#            --app islami-app-fue \
+#            --token "${{ secrets.FIREBASE_TOKEN }}" \
+#            --groups "internal-testers"
