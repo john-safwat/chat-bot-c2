@@ -38,13 +38,13 @@ jobs:
             echo "APK file NOT found!" && exit 1
           fi
 
-      - name: Upload and Distribute App
-        uses: mastersam07/firebase-app-distribution-action@v0.1
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
-          appId: ${{ secrets.FIREBASE_APP_ID }}
-          file: './build/app/outputs/flutter-apk/app-release.apk'  # e.g., './build/app/outputs/flutter-apk/app-release.apk'
-          groups: 'internal-testers'
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          groups: internal-testers
+          file: app/build/outputs/apk/release/app-release.apk
 #
 #      - name: Upload to Firebase App Distribution
 #        run: |
