@@ -17,11 +17,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("data")),
+      appBar: AppBar(title: const Text("data")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(),
+          const Row(),
           OutlinedButton(
             key: const ValueKey("localeButton"),
             onPressed: () {
@@ -47,7 +47,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           ),
 
           if(isLoading)
-            CircularProgressIndicator()
+            const CircularProgressIndicator()
         ],
       ),
     );

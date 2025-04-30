@@ -46,11 +46,3 @@ jobs:
           groups: internal-testers
           file: ./build/app/outputs/flutter-apk/app-release.apk
           releaseNotes: "New build uploaded automatically via GitHub Actions"
-#
-#      - name: Upload to Firebase App Distribution
-#        run: |
-#          npm install -g firebase-tools
-#          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
-#            --app islami-app-fue \
-#            --token "${{ secrets.FIREBASE_TOKEN }}" \
-#            --groups "internal-testers"

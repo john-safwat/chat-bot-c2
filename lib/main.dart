@@ -5,7 +5,6 @@ import 'package:chat_bot_c2/core/routes/app_routes.dart';
 import 'package:chat_bot_c2/core/theme/app_theme.dart';
 import 'package:chat_bot_c2/core/utils/constants.dart';
 import 'package:chat_bot_c2/feature/login/view/login_view.dart';
-import 'package:chat_bot_c2/feature/login/view_model/login_view_model.dart';
 import 'package:chat_bot_c2/feature/onboarding/view/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +24,7 @@ void main() async {
   );
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
@@ -43,9 +43,9 @@ class MyApp extends StatelessWidget {
       themeMode: appConfigProvider.getThemeMode(),
       initialRoute: AppRoutes.loginRoute,
       routes: {
-        AppRoutes.onboardingRoute: (_) => OnBoardingView(),
+        AppRoutes.onboardingRoute: (_) => const OnBoardingView(),
         AppRoutes.loginRoute:
-            (_) => LoginView(),
+            (_) => const LoginView(),
       },
     );
   }
